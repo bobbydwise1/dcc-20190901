@@ -10,7 +10,19 @@ It should run in O(N) time.
 Hint: Make sure each one of the 52! permutations of the deck is equally likely.
 */
 
+const makeRandomNumber = (k) => {
+  return Math.round(Math.random()*(k-1)+1)
+}
 
+console.log(makeRandomNumber(10))
+console.log(makeRandomNumber(10))
+console.log(makeRandomNumber(10))
+console.log(makeRandomNumber(10))
+console.log(makeRandomNumber(10))
+console.log(makeRandomNumber(10))
+console.log(makeRandomNumber(10))
+console.log(makeRandomNumber(10))
+console.log(makeRandomNumber(10))
 
 $(document).ready(function() {
 });
