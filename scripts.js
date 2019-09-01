@@ -14,15 +14,18 @@ const makeRandomNumber = (k) => {
   return Math.round(Math.random()*(k-1)+1)
 }
 
-console.log(makeRandomNumber(10))
-console.log(makeRandomNumber(10))
-console.log(makeRandomNumber(10))
-console.log(makeRandomNumber(10))
-console.log(makeRandomNumber(10))
-console.log(makeRandomNumber(10))
-console.log(makeRandomNumber(10))
-console.log(makeRandomNumber(10))
-console.log(makeRandomNumber(10))
+const cardDeck = () => {
+  let output = []
+  for (i = 0; i < 52; i++) {
+    output.push(i)
+  }
+  return output
+}
+
+
+
+console.log(cardDeck())
 
 $(document).ready(function() {
+
 });
