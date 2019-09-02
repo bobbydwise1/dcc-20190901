@@ -22,9 +22,22 @@ const cardDeck = () => {
   return output
 }
 
+const limitedSwap = (yourArray) => {
+  let copiedArray = yourArray.slice()
+  let output = [];
+  let temp1;
+  for ( i = 0; i < copiedArray.length; i++ ) {
+    temp1 = copiedArray[i];
+    temp2 = makeRandomNumber(52)
+    copiedArray[i] = copiedArray[temp2];
+    copiedArray[temp2] = temp1;
+  }
+  return copiedArray
+}
 
-
-console.log(cardDeck())
+let deck = cardDeck()
+console.log(deck)
+console.log(limitedSwap(deck))
 
 $(document).ready(function() {
 
