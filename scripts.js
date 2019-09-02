@@ -11,7 +11,7 @@ Hint: Make sure each one of the 52! permutations of the deck is equally likely.
 */
 
 const makeRandomNumber = (k) => {
-  return Math.round(Math.random()*(k-1)+1)
+  return Math.ceil(Math.random()*(k-1))
 }
 
 const cardDeck = () => {
@@ -26,11 +26,15 @@ const limitedSwap = (yourArray) => {
   let copiedArray = yourArray.slice()
   let output = [];
   let temp1;
+  let temp2;
   for ( i = 0; i < copiedArray.length; i++ ) {
     temp1 = copiedArray[i];
     temp2 = makeRandomNumber(52)
-    copiedArray[i] = copiedArray[temp2];
-    copiedArray[temp2] = temp1;
+    while (i == temp2) {
+      temp2 = makeRandomNumber(52)
+    }
+    copiedArray[i] = copiedArray[temp2]; //Swap 1
+    copiedArray[temp2] = temp1;  //Swap 2
   }
   return copiedArray
 }
@@ -40,5 +44,9 @@ console.log(deck)
 console.log(limitedSwap(deck))
 
 $(document).ready(function() {
-
+  $('#output-section-0').text(JSON.stringify(deck))
+  $('#form1').submit(function(){
+    event.preventDefault()
+    $('#output-section-1').text(JSON.stringify(limitedSwap(deck)))
+  });
 });
